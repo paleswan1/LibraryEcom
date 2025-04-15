@@ -8,10 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Common\" />
+      <Folder Include="DTOs\Announcement\" />
+      <Folder Include="DTOs\Author\" />
+      <Folder Include="DTOs\Discount\" />
       <Folder Include="DTOs\Email\" />
       <Folder Include="DTOs\Order\" />
-      <Folder Include="DTOs\User\" />
+      <Folder Include="DTOs\Review\" />
+      <Folder Include="DTOs\Whitelist\" />
     </ItemGroup>
 
     <ItemGroup>

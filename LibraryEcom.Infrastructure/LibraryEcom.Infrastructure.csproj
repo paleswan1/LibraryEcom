@@ -14,9 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Dependency\" />
-      <Folder Include="Implementation\" />
-      <Folder Include="Persistence\" />
+      <Folder Include="Implementation\Helper\" />
     </ItemGroup>
 
     <ItemGroup>
