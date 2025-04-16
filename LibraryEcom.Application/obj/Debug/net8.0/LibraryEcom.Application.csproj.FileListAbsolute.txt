@@ -13,3 +13,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.Application\obj\Debug\net8.0\Library
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Application\obj\Debug\net8.0\refint\LibraryEcom.Application.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Application\obj\Debug\net8.0\LibraryEcom.Application.pdb
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Application\obj\Debug\net8.0\ref\LibraryEcom.Application.dll
+C:\Users\Acer\Desktop\Universal\LibraryEcom.Application\obj\Debug\net8.0\LibraryEcom.Application.sourcelink.json

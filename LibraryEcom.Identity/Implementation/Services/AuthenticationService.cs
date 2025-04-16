@@ -15,6 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 using LibraryEcom.Application.Interfaces.Services;
 using LibraryEcom.Application.Exceptions;
 using LibraryEcom.Application.Interfaces.Repositories.Base;
+using LibraryEcom.Domain.Common.Property;
 using LibraryEcom.Domain.Entities;
 using LibraryEcom.Helper.Implementation.Manager;
 using Microsoft.AspNetCore.Authentication;
@@ -58,13 +59,91 @@ public class AuthenticationService(
         return new string(combinedPassword.OrderBy(_ => random.Next()).ToArray());
     }
 
+    public async Task<UserLoginResponseDto> Login(LoginDto login)
+    {
+        var user = await userManager.FindByEmailAsync(login.Email)
+            ?? throw new NotFoundException("The following user has not been registerd to our system.");
+
+        if (!user.IsActive)
+            throw new BadRequestException("You can not log in to the system.",
+                ["The following user is not active, please contact the administrator"]);
+        
+        var isPasswordValid = await userManager.CheckPasswordAsync(user, login.Password);
+
+        if (!isPasswordValid)
+            throw new NotFoundException("Invalid password, please try again.");
+
+        var key = Encoding.ASCII.GetBytes(_jwtSettings.Key);
+
+        var issuer = _jwtSettings.Issuer;
+
+        var audience = _jwtSettings.Audience;
+
+        var accessTokenExpirationInMinutes = Convert.ToInt32(_jwtSettings.AccessTokenExpirationInMinutes);
+        
+        var userRoles = await userManager.GetRolesAsync(user);
+        
+        var roleName = userRoles.FirstOrDefault();
+        
+        var role = await roleManager.FindByNameAsync(roleName!);
+
+        var AuthClaims = new List<Claim>
+        {
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name, user.Name),
+            new(ClaimTypes.Email, user.Email!),
+            new(ClaimTypes.Role, role!.Name!),
+            new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        };
+        
+        var symmetricSigningKey = new SymmetricSecurityKey(key);
+
+        var signingCredentials = new SigningCredentials(symmetricSigningKey, SecurityAlgorithms.HmacSha256);
+
+        var expirationTime = ExtensionMethod.GetUtcDate().AddMinutes(accessTokenExpirationInMinutes);
+
+        var accessToken = new JwtSecurityToken(
+            issuer,
+            audience,
+            claims: AuthClaims,
+            signingCredentials: signingCredentials,
+            expires: expirationTime
+        );    
+        
+        var jwt = new JwtSecurityTokenHandler().WriteToken(accessToken);
+        
+        var userDetails = new UserDetail()
+        {
+           Id = user.Id,
+           Email = user.Email,
+           Name = user.Name,
+           IsActive = user.IsActive,
+           Address = user.Address,
+           RegisteredDate = user.RegisteredDate,
+           
+        };
+
+        var result = new UserLoginResponseDto()
+        {
+            Token = jwt,
+            UserDetails = userDetails
+        };
+
+        return result;
+    }
+
     public Task<ResetPasswordRequestDto> ResetUserPassword(ResetUserPasswordDto resetUserPassword)
     {
         throw new NotImplementedException();
     }
 
-    public void ExpireToken(string token)
+    public Task<RegistrationResponseDto> UserRegister(UserRegisterDto user)
     {
+        throw new NotImplementedException();
+    }
+
+    public void ExpireToken(string token)
+    {     
         tokenManager.BlackList.Add(token);
     }
 

@@ -165,3 +165,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.API\obj\Debug\net8.0\LibraryEcom.API
 C:\Users\Acer\Desktop\Universal\LibraryEcom.API\obj\Debug\net8.0\ref\LibraryEcom.API.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.API\bin\Debug\net8.0\LibraryEcom.Migrators.PostgreSQL.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.API\bin\Debug\net8.0\LibraryEcom.Migrators.PostgreSQL.pdb
+C:\Users\Acer\Desktop\Universal\LibraryEcom.API\obj\Debug\net8.0\LibraryEcom.API.sourcelink.json

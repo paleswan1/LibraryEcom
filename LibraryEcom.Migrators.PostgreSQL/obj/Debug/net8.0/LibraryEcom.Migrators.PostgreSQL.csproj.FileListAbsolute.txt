@@ -19,3 +19,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.Migrators.PostgreSQL\obj\Debug\net8.
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Migrators.PostgreSQL\obj\Debug\net8.0\refint\LibraryEcom.Migrators.PostgreSQL.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Migrators.PostgreSQL\obj\Debug\net8.0\LibraryEcom.Migrators.PostgreSQL.pdb
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Migrators.PostgreSQL\obj\Debug\net8.0\ref\LibraryEcom.Migrators.PostgreSQL.dll
+C:\Users\Acer\Desktop\Universal\LibraryEcom.Migrators.PostgreSQL\obj\Debug\net8.0\LibraryEcom.Migrators.PostgreSQL.sourcelink.json

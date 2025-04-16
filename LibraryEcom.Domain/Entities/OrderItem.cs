@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using LibraryEcom.Domain.Common.Base;
 
 namespace LibraryEcom.Domain.Entities;
 
-public class OrderItem
+public class OrderItem:BaseEntity<Guid>
 {
     [ForeignKey(nameof(Order))]
     public Guid OrderId { get; set; }

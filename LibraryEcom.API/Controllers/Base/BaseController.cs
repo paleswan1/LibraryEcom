@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
-namespace Universal.Controllers.Base;
+namespace LibraryCom.Controllers.Base;
 
 [Authorize]
 [TokenHandler]

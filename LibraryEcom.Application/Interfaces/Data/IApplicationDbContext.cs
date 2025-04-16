@@ -1,3 +1,4 @@
+using System.Data;
 using LibraryEcom.Application.Common.Service;
 using LibraryEcom.Domain.Entities;
 using LibraryEcom.Domain.Entities.Identity;
@@ -45,5 +46,16 @@ public interface IApplicationDbContext:IScopedService
     DbSet<Review> Reviews { get; set; }
     
     DbSet<WhiteList> WhiteLists { get; set; }
+    
+    
+    #region Functions
+    int SaveChanges();
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    #endregion
+
+    #region Properties
+    IDbConnection Connection { get; }
+    #endregion
     
 }

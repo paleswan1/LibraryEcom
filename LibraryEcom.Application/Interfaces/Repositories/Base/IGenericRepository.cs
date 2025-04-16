@@ -7,9 +7,15 @@ public interface IGenericRepository: ITransientService
 {
     #region Existence
     bool Exists<TEntity>(Expression<Func<TEntity, bool>>? filter = null) where TEntity : class;
+    
+   
     #endregion
     
+    
     #region Get
+    IQueryable<TEntity> GetPagedResult<TEntity>(int pageNumber, int pageSize, out int rowsCount,
+        Expression<Func<TEntity, bool>>? filter = null, Expression<Func<TEntity, object>>? order = null, bool isAscendingOrder = true) where TEntity : class;
+
     IQueryable<TEntity> Get<TEntity>(Expression<Func<TEntity, bool>>? filter = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
         string includeProperties = "") where TEntity : class;

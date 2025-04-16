@@ -32,14 +32,13 @@ services.AddIdentityServices(configuration);
 services.AddInfrastructureService(configuration); 
 
 
-// await services.AddDataSeedMigrationService(); 
+await services.AddDataSeedMigrationService(); 
 
 services.AddCustomSwaggerGen();
 
 // Log.Logger = new LoggerConfiguration()
 //     .ReadFrom.Configuration(builder.Configuration).CreateLogger();
 
-services.AddDbContext<ApplicationDbContext>();
 
 var app = builder.Build();
 

@@ -189,24 +189,25 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     }
 
     private void UpdateLogs()
+{
+    var entries = ChangeTracker.Entries()
+        .Where(e => e is { Entity: BaseEntity<Guid> or BaseEntity<string>, State: EntityState.Added or EntityState.Modified or EntityState.Deleted });
+
+    if (currentUserService == null || currentUserService.GetUserId == Guid.Empty)
     {
-        var entries = ChangeTracker.Entries()
-            .Where(e => e is { Entity: BaseEntity<Guid> or BaseEntity<string>, State: EntityState.Added or EntityState.Modified or EntityState.Deleted });
-
-        if (currentUserService == null)
-        {
-            throw new Exception("The following user has not been registered to our system.");
-        }
-
-        var dateTime = DateTime.UtcNow;
-        
-        var userId = currentUserService.GetUserId;
-
-        foreach (var entry in entries)
-        {
-            UpdateEntityLog(entry.Entity, entry.State, userId, dateTime);
-        }
+        // Skip logging if no user is available (typically during data seeding)
+        return;
     }
+
+    var dateTime = DateTime.UtcNow;
+    var userId = currentUserService.GetUserId;
+
+    foreach (var entry in entries)
+    {
+        UpdateEntityLog(entry.Entity, entry.State, userId, dateTime);
+    }
+}
+
 
     private static void UpdateEntityLog<TEntity>(TEntity entity, EntityState state, Guid userId, DateTime dateTime)
         where TEntity : class

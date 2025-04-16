@@ -19,3 +19,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.Identity\obj\Debug\net8.0\LibraryEco
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Identity\obj\Debug\net8.0\refint\LibraryEcom.Identity.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Identity\obj\Debug\net8.0\LibraryEcom.Identity.pdb
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Identity\obj\Debug\net8.0\ref\LibraryEcom.Identity.dll
+C:\Users\Acer\Desktop\Universal\LibraryEcom.Identity\obj\Debug\net8.0\LibraryEcom.Identity.sourcelink.json

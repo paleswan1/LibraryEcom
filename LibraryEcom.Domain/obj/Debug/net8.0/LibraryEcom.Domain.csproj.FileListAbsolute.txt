@@ -10,3 +10,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.Domain\obj\Debug\net8.0\LibraryEcom.
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Domain\obj\Debug\net8.0\refint\LibraryEcom.Domain.dll
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Domain\obj\Debug\net8.0\LibraryEcom.Domain.pdb
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Domain\obj\Debug\net8.0\ref\LibraryEcom.Domain.dll
+C:\Users\Acer\Desktop\Universal\LibraryEcom.Domain\obj\Debug\net8.0\LibraryEcom.Domain.sourcelink.json

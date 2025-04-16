@@ -31,13 +31,12 @@ public class UserDetail
 
     public string? Address { get; set; }
 
-    public Guid? DesignationId { get; set; }
+   public string Username { get; set; }
+   
+   public string LastName { get; set; }
+   
+   public string FirstName { get; set; }
     
-    public string? Designation { get; set; }
-    
-    public Guid? OrganizationId { get; set; }
-
-    public string? Organization { get; set; }
-    
+   public DateTime RegisteredDate { get; set; } = DateTime.UtcNow;
     public bool IsActive { get; set; }
 }

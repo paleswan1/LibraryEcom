@@ -5,7 +5,6 @@ namespace LibraryEcom.Domain.Entities;
 
 public class Book: BaseEntity<Guid>
 {
-    public Guid Id { get; set; }
     
     public Guid PublisherId { get; set; }
     
@@ -30,4 +29,7 @@ public class Book: BaseEntity<Guid>
     public bool IsAvailable { get; set; }
     
     public Discount Discount { get; set; }
+    
+    // public List<BookAuthor> BookAuthors { get; set; } = new();
+
 }

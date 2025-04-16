@@ -19,3 +19,4 @@ C:\Users\Acer\Desktop\Universal\LibraryEcom.Infrastructure\obj\Debug\net8.0\refi
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Infrastructure\obj\Debug\net8.0\LibraryEcom.Infrastructure.pdb
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Infrastructure\obj\Debug\net8.0\LibraryEcom.Infrastructure.genruntimeconfig.cache
 C:\Users\Acer\Desktop\Universal\LibraryEcom.Infrastructure\obj\Debug\net8.0\ref\LibraryEcom.Infrastructure.dll
+C:\Users\Acer\Desktop\Universal\LibraryEcom.Infrastructure\obj\Debug\net8.0\LibraryEcom.Infrastructure.sourcelink.json

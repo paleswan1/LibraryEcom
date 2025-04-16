@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using LibraryEcom.Domain.Common.Base;
 
 namespace LibraryEcom.Domain.Entities;
 
-public class BookAuthor
+public class BookAuthor: BaseEntity<Guid>
 {
     [ForeignKey(nameof(Book))]
     public Guid BookId { get; set; }

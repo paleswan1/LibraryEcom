@@ -11,12 +11,40 @@ public abstract class Constants
     
     public abstract class DbProviderKeys
     {
-        public const string Npgsql = "Npgsql";
+        public const string Npgsql = "postgresql";
+    }
+    
+    public abstract class Admin
+    {
+        public const string Identifier = "66cd3c59-b2e9-4bd9-8e39-65f550c59c1c";
+
+        public abstract class Development
+        {
+            public const string Name = "Affinity";
+            public const string EmailAddress = "affinity@affinity.io";
+            public const string DecryptedPassword = "radi0V!oleta";
+        }
     }
     
     public abstract class Cors
     {
         public const string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+    }
+    
+    public abstract class Authentication
+    {
+        public const string PasswordCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?/";
+    }
+    
+    public abstract class Encryption
+    {
+        public const string Key = "@ff!N1ty";
+    }
+
+    public abstract class Provider
+    {
+        public const string Api = "API";
+        public const string Wasm = "WASM";
     }
     
 }
